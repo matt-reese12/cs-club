@@ -1,18 +1,18 @@
 #This problem has multiple steps of increasing difficulty. Complete as many as you can
 
 #This is the value that will be passed to each function
-num = 100
+num = 20
 
 
 #PROBLEM 1: return a list of every number from 0 to n
 #Ex: n = 10
 #output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 def problem1(n):
-    return range(n + 1)
+    return list(range(n + 1))
 
 #PROBLEM 2: return every even number from 0 to n
 def problem2(n):
-    return range(0, n + 1, 2)
+    return list(range(0, n + 1, 2))
 
 #PROBLEM 3: return every even number from 0 to n, NOT including multiples of 4
 def problem3(n):
@@ -21,18 +21,34 @@ def problem3(n):
 #PROBLEM 4: return every prime number from 1 to n
 def problem4(n):
     # O(n^2)
-    # Can definitely be otimized with some smart math, 
+    # Can definitely be otimized with some smarter math,
     # but I don't feel like thinking about it
-    answer = range(1, n + 1)
+    all = range(2, n + 1)
+    answer = list()
 
-    answer = [e for e in answer for f in answer if e % f != 0]
+    flag = True
+    for i,e in enumerate(all):
+        for factor in all[0:i]:
+            if e % factor == 0:
+                flag = False
+                break
+        if flag:
+            answer.append(e)
+        else:
+            flag = True
 
     return answer
 
 #PROBLEM 5: return every number in the fibonacci sequence from 0 to n
 def problem5(n):
     answer = []
-    #Your code here
+    
+    prev, current = 0, 1
+    while current < n:
+        answer.append(current)
+        next = current + prev
+        prev = current
+        current = next
 
     return answer
 
