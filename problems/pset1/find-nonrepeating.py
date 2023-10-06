@@ -3,32 +3,30 @@
 # Find this number and return it from the function
 # Bonus points if you can do it in linear time complexity (if you don't know what this means don't worry about it)
 
-#Example 1:
-#   input: nums = [2,2,1]
-#   output: 1
-# Explanation: 1 is the only number in the array that only appears once
-
-#Example 2:
-#   input: nums = [4,1,2,1,2]
-#   output: 4
-
 #Your solution should work for ANY possible array of integers
 #some example testcases are given below
 
 #=================================WRITE YOUR ANSWER BELOW==================================
 def singleNumber(nums):
     # O(n), maybe a bit harder to understand though
-    ans = 0
-    for n in nums:
-        ans ^= n
-    return ans
+    answer = 0
+    for num in nums:
+        answer = answer ^ num
+    # Above uses the bitwise XOR (pronounced "X"-or) operator 
+    # Let's imagine there's two variables, with binary representations as follows:
+    # 1001 ^ 0101 = 1100 
+    # now see: 1100 ^ 0101 = 1001 (the original value)
+    return answer
 
 def singleNumberSuboptimal(nums):
     # Mostly optimal method
     # - average case O(n) but worst case O(n^2)
     table = {}
+    # [1, 4, 5, 1, 4]
+    # { 1: 2, 4: 2, 5: 1}
+    # 
     for n in nums:
-        if n in table:
+        if n in table: # The possible problem
             table[n] += 1
         else:
             table[n] = 1
@@ -39,6 +37,15 @@ def singleNumberSuboptimal(nums):
 
     return None
 
+def nestedSolution(nums):
+    for i in nums:
+        count = 0
+        for j in nums:
+            # Count 
+            if j == i:
+                count += 1
+        if count == 1:
+            return i
 
 
 #========================================TEST CASES========================================
