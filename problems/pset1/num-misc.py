@@ -20,22 +20,18 @@ def problem3(n):
 
 #PROBLEM 4: return every prime number from 1 to n
 def problem4(n):
-    # O(n^2)
-    # Can definitely be otimized with some smarter math,
-    # but I don't feel like thinking about it
-    all = range(2, n + 1)
-    answer = list()
+    # Time complexity: O(n * log(log(n)))
+    # Space complexity: O(n)
+    prime_nums = [True] * (n + 1)
 
-    flag = True
-    for i,e in enumerate(all):
-        for factor in all[0:i]:
-            if e % factor == 0:
-                flag = False
-                break
-        if flag:
-            answer.append(e)
-        else:
-            flag = True
+    # Sieve of Eratosthenes algorithm
+    p = 2
+    while p < n * n:
+        for not_p in range(p * p, n + 1, p):
+            prime_nums[not_p] = False
+        p += 1
+
+    answer = [v for v in range(2, n + 1) if prime_nums[v]]
 
     return answer
 
