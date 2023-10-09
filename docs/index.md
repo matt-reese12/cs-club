@@ -7,6 +7,6 @@
 Above are my solutions to problems done for the club, along with (hopefully) detailed explanations. As before, if you have any questions or suggestions regarding these explanations, feel free to message me on discord.
 
 ___
-[^non_affiliate]: __Disclaimer__: This repository and it's cooresponding documentation are not directly affiliated with nor endorsed by the *Saddleback Computer Science Club* nor *S.A.M.E.*
+[^non_affiliate]: __Disclaimer__: This repository and it's corresponding documentation are not directly affiliated with nor endorsed by the *Saddleback Computer Science Club* nor *S.A.M.E.*
 
 
