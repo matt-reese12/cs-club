@@ -24,7 +24,6 @@ def singleNumberSuboptimal(nums):
     table = {}
     # [1, 4, 5, 1, 4]
     # { 1: 2, 4: 2, 5: 1}
-    # 
     for n in nums:
         if n in table: # The possible problem
             table[n] += 1
