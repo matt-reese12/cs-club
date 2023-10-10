@@ -21,3 +21,4 @@ Revisions:
 - Perhaps even less assumptions about programming knowledge (kinda conflicts with previous task but whatever)
 - More hyperlinks to external sources to talk about concepts that I don't have time to get into (time complexity, caching/dictionary usage, bitwise stuff, etc.)
   - Also links of related problems for people to solve
+- Explain the word "idiomatic" in context
