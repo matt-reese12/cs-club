@@ -112,7 +112,10 @@ In this section, I'll be showing how XOR can be used to optimize the solution to
 Where __a__ and __b__ are binary values. Looking past the definition, *behaviors* of XOR are much more important to realize.
 ##### Associative and Commutative Properties:
 
+##### Efficiency:
+Time Complexity: __O(n)__ \| __Linear__
 
+Space Complexity: __O(1)__ \| __Constant__
 ___
 #### Key Terms and Definitions
 Iterate
