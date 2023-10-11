@@ -11,7 +11,7 @@ In all of the following solutions, `nums` is defined as the list of integers.
 Looking at this problem initially, it's clear that we need to iterate through the list *at least* once. Each pair of like elements should be found and noted, leaving the one remaining element as the result.
 The first question that arises is, how do we check whether each element has a corresponding equal? One approach that may come to mind is to use *nested iteration*. That is, iterate through the list and within that loop, iterate again, checking each element for equality. If the current element has a counterpart, we can discard it and move on, as we only care about elements __without__ an equal counterpart.
 
-Here is an implementation of these idea:
+Here is an implementation of this idea:
 ```python
 for a in nums:
     appears: int = 0
@@ -94,7 +94,24 @@ Time Complexity: __O(n)__ \| __Linear__[^3]
 Space Complexity: __O(n)__ \| __Linear__
 
 ## 3) Bitwise Solution:
-TODO...
+All right! Last, but certainly not least, is a solution that may not come intuitively if you don't have a good understanding of bitwise operators, or boolean algebra. The following explanation should hopefully help amend that.
+#### Bitwise Operators and Binary Data:
+First and foremost, *just what are* bitwise operators? If you've taken any introductory computer science class (or are taking one right now), chances are that your professor, or the class textbook, has introduced the concept of bitwise operators. For a quick refresher, bitwise operators act __directly on the binary data of a value__. Here's a [good article][binary and bitwise] on how python stores integers in binary, and the basics of bitwise operators, if you need it. For this solution, we'll only be using the XOR operator, which I'll soon explain in more depth.
+#### Properties of XOR:
+The XOR operator is commonly the `^` symbol in programming, or $$\oplus$$ in mathematical notation. From now on, I will be exclusively using `^` to refer to the operator, since that's how it's used in both C++ and Python.
+
+In this section, I'll be showing how XOR can be used to optimize the solution to this problem. But first, we must understand what it does, and how it's properties may apply. The usage of XOR is on binary data, and thusly, the truth table below shows all possible equations:
+
+|__a__|__b__|__a ^ b__|
+| --- | --- | ------- |
+|  0  |  0  |    0    |
+|  0  |  1  |    1    |
+|  1  |  0  |    1    |
+|  1  |  1  |    0    |
+
+Where __a__ and __b__ are binary values. Looking past the definition, *behaviors* of XOR are much more important to realize.
+##### Associative and Commutative Properties:
+
 
 ___
 #### Key Terms and Definitions
@@ -113,3 +130,4 @@ ___
 [^2]: These type of algorithms are often referred to as the "naive approach" in comp sci and math. This simply means that the solution is the most apparent and the first attempt one may take. It does not necessarily imply that the solution is trivial or "bad." 
 [^3]: *Well... __very__ small contingency that may make it quadratic, but it's virtual impossible with real-world numbers.*
 [python dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+[binary storage]: 
