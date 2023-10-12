@@ -47,7 +47,6 @@ def problem3(n):
             result.append(value)
     return result
 {% endhighlight %}
-
 </details>
 
 ## Problem 4
@@ -55,16 +54,37 @@ def problem3(n):
 
 ```python
 def problem4(n):
-    return n
-```
+    is_prime = [True] * (n + 1)
 
+    i = 2
+    while i * i <= n:
+        if is_prime[i]:
+            for not_p in range(i * i, n + 1, i):
+                is_prime[not_p] = False
+        i += 1
+
+    result = [num for num in range(2, n + 1) if is_prime[num]]
+
+    return result
+```
+#### Sieve of Eratosthenes:
+Eratosthenes was a greek mathematician who, ...
 
 ## Problem 5
 > *Return every number in the fibonacci sequence from 0 to n*
 
 ```python
 def problem5(n):
-    return n
+    result = []
+    
+    prev, current = 0, 1
+    while current < n:
+        result.append(current)
+        next = current + prev
+        prev = current
+        current = next
+
+    return result
 ```
 
 ## Problem 6
@@ -72,7 +92,17 @@ def problem5(n):
 
 ```python
 def problem6(n):
-    return n
+    val = 0
+    if n in saved:
+        return saved[n]
+
+    if n <= 2:
+        val = 1
+    else:
+        val = problem6(n - 1, saved) + problem6(n - 2, saved)
+
+    saved[n] = val
+    return val
 ```
 
 ## Problem 7
@@ -80,7 +110,12 @@ def problem6(n):
 
 ```python
 def problem7(n):
-    return n
+    result = list(range(-n // 2 + 1, 0)) + list(range(1, n // 2))
+
+    if len(result) < n:
+        result += [0];
+
+    return result
 ```
 
 ___
