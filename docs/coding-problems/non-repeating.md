@@ -111,7 +111,7 @@ A quick primer on XOR: It's a bitwise operator that returns __0__ if both argume
 |  1  |  0  |    1    |
 |  1  |  1  |    0    |
 
- Looking past the definition, *behaviors* of XOR when used on more than 2 values are important to realize. The great thing about them is that they also apply to *sets of bits*; this means they will hold true for any data represented by your computer in binary *(i.e. an integer)*. The properties can be explicitly proven using *case analysis*[^4], but this explanation is already long enough.
+ Looking past the definition, *behaviors* of XOR when used on more than 2 values are important to realize. The great thing about them is that they also apply to *sets of bits*; this means they will hold true for any data represented by your computer in binary *(i.e. an integer)*. The properties can be explicitly proven using *case analysis*[^4], but I'll leave that to the reader, as this explanation is already long enough. Here's a [resource][xor properties] if you're interested in looking into this further, though it may require some familiarity with the syntax of boolean algebra.
  : Commutativity: __a ^ b = b ^ a__
 <!--- : Associativity: __(a ^ b) ^ c = a ^ (b ^ c) = a ^ b ^ c__ --->
  : Canceling out like terms: __a ^ a ^ b = b__ (This is the most important one for us)
