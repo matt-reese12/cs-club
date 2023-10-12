@@ -17,7 +17,7 @@ Here are links to each problem, if you'd like to jump to a specific one:
 def problem1(n):
     return list(range(n + 1))
 ```
-As shown in the code snippet above, the solution simply involves creating a [python `range` object][reference: range] from __0__ to __n + 1__, then converting the object to a `list`. __n + 1__ is used as opposed to simply __n__ because this version of the range constructor will only return numbers 0 to `end` or the parameter passed in, or $$[0, n + 1)$$ in math notation.
+As shown in the code snippet above, the solution simply involves creating a [python `range` object][reference: range] from __0__ to __n + 1__, then converting the object to a `list`. __n + 1__ is used as opposed to simply __n__ because this version of the range constructor will only return numbers 0 to `end` or the parameter passed in, or $$\left[0, n + 1\right)$$ in math notation.
 
 ## Problem 2
 > *Return every even number from 0 to n*
@@ -35,7 +35,7 @@ This problem has a very similar solution to the previous, the only difference be
 def problem3(n):
     return [value for value in range(0, n + 1, 2) if value % 4 != 0]
 ```
-Just like the previous problem, `range(0, n + 1, 2)` is used, getting a range object filled with even numbers $$[0, n)$$. This time, we need to filter out every number in this range that is a multiple of __4__. In other, more applicable terms: every value for which __value % 4 == 0__[^1] should be discarded. To do this, I used [list comprehension][reference: list comprehension], a kind of shorthand for-loop syntax that can return a list of values __if__ they meet a specified condition. If needed, under the dropdown below is an example that does not use list comprehension that may give a more clear representation of what is happening.
+Just like the previous problem, `range(0, n + 1, 2)` is used, getting a range object filled with even numbers $$[0, n)$$. This time, we need to filter out every number in this range that is a multiple of __4__. In other, more applicable terms: every value for which __value % 4 == 0__[^1] should be discarded. To do this, I used [list comprehension][reference: list comprehension], a kind of shorthand for-loop syntax that returns a list of values __if__ they meet a specified condition. If needed, under the dropdown below is an example that does not use list comprehension that may give a more clear representation of what is happening.
 
 <details>
 <summary>Alternative Solution</summary>
@@ -68,7 +68,14 @@ def problem4(n):
     return result
 ```
 #### Sieve of Eratosthenes:
-Eratosthenes was a greek mathematician who, ...
+Eratosthenes was a greek mathematician who devised an algorithmic method for filtering[^2] out the non-primes from a subset of natural numbers (*Natural Numbers* => $$\mathbb{N} = \{1, 2, 3, \cdots\}$$) defined by $$[0, n]$$.
+
+|Title|
+1|2|3|4|5|6|7|8|9|10
+11|12|13|14|15|16|17|18|19|20
+21|22|23|24|25|26|27|28|29|30
+31|32|33|34|35|36|37|38|39|40
+41|42|43|44|45|46|47|48|49|50
 
 ## Problem 5
 > *Return every number in the fibonacci sequence from 0 to n*
@@ -124,7 +131,7 @@ Function Signature
 : The ...
 
 [^1]: The modulus operator, in this example, returns the remainder of `value / 4`. To check if `value` is *not* a multiple of 4, we do *not* want the remainder to be __0__. For a basic explanation of a few modulus use cases, see this [Stack Overflow Answer][reference: basic modulus].
-
+[^2]: or "sieving," thus the name
 [python functions docs]: https://docs.python.org/3.12/library/functions.html
 [reference: range]: https://docs.python.org/3/library/stdtypes.html#typesseq-range
 [reference: list comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
