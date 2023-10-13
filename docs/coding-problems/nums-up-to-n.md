@@ -113,7 +113,29 @@ We do subsequent passes just like those before with the numbers **5** and **7**,
 ___
 If you look back to my python implementation of the sieve, you may see how it's steps directly mirror my description of the algorithm above. First, I initialize an list of boolean values of size `n + 1` to include all numbers from $$[0, n]$$. These all begin as `True` (marked as prime). Then I iterate through this list, marking any composite numbers as *non-prime*, in the same way as outlined above. Note that the conditional of the `while` loop, `i * i <= n` is equivalent to $$i \le \sqrt{n}$$. Within this outer loop, I check if the current number is marked as prime. If so, I iterate through all of its factors in $$\left[i^2, n\right]$$, marking them as composite. After these nested loops finish, I am left with a boolean list of size **n + 1**, with all primes marked as `True` and all composites marked as `False`. All that is left is to iterate through this list one last time, and translate it into a new list containing only prime numbers. This is done with list comprehension, with `result = . . .`. Starting at **2** and going to **n + 1**, checking if each corresponding value in `is_prime` is `True`, and adding that number to the list if so.
 
-<!--- Other prime naive solution --->
+#### Another Solution:
+Another, arguably simpler, solution may be found if you have never been introduced to Eratosthenes' algorithm. Just like in the ["Straightforward" Solution for the Non-repeating problem](./non-repeating), you could use nested loops. The outer loop would be to iterate through all numbers $$[2, n]$$, while the inner would check all prior numbers to see if each number is prime or composite. You should try to work through implementing this yourself, but if you get stuck, the solution is in the dropdown below. HINT: Use modulus to check if a given number is a factor of another.
+<details>
+<summary>Memoization Solution:</summary>
+{% highlight python %}
+def problem4(n):
+    result = []
+
+    for num in range(2, n + 1):
+        prime = True
+        for factors in range(2, num):
+            if num % factors == 0:
+                prime = False
+                break
+        if prime:
+            result.append(num)
+    
+    return result
+    
+{% endhighlight %}
+</details>
+
+
 
 ## Problem 5
 > *Return every number in the fibonacci sequence from 0 to n*
