@@ -116,7 +116,7 @@ If you look back to my python implementation of the sieve, you may see how it's 
 #### Another Solution:
 Another, arguably simpler, solution may be found if you have never been introduced to Eratosthenes' algorithm. Just like in the ["Straightforward" Solution for the Non-repeating problem](./non-repeating), you could use nested loops. The outer loop would be to iterate through all numbers $$[2, n]$$, while the inner would check all prior numbers to see if each number is prime or composite. You should try to work through implementing this yourself, but if you get stuck, the solution is in the dropdown below. HINT: Use modulus to check if a given number is a factor of another.
 <details>
-<summary>Memoization Solution:</summary>
+<summary>Nested Solution:</summary>
 {% highlight python %}
 def problem4(n):
     result = []
