@@ -163,7 +163,7 @@ ___
 > Optimize
 : To reduce the time and/or space complexity of an algorithm
 
-## Closing Words
+## Closing Remarks
 Well, that's it for this problem. If you're able to understand everything I've said above then, first of all, great job. I wrote this while sleep deprived, trying to ride a caffeine-high, so it may have ended up a little less cohesive than I'd have liked. Secondly, and more importantly, it illustrates your skill in understanding a combination mathematical and computational problems. I'm aware that I left a few important concepts out, so I'm hopefully planning on publishing some subsequent pages regarding some topics. The first, and most blatant concept I left out was the meaning of time/space complexities, which I'm in the process of writing about (should be posted by Friday). I hope I wasn't overly verbose, but I'm aware that there's a disparity in the experience of many of this club's members, so I wanted to cover all possible bases. If you have any questions, suggestions, or comments, feel free to send me a message __@Matt__ on the club's discord server, or dm me. I'd greatly appreciate any feedback you're willing to give!
 
 ___

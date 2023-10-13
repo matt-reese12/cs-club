@@ -68,10 +68,15 @@ def problem4(n):
     return result
 ```
 #### Sieve of Eratosthenes:
-Eratosthenes was a greek mathematician who devised an algorithmic method for filtering[^2] out the non-primes from a subset of natural numbers (*Natural Numbers* => $$\mathbb{N} = \{1, 2, 3, \cdots\}$$) defined by $$[0, n]$$.
+Eratosthenes was a greek mathematician who devised an algorithmic method for filtering[^2] out the non-primes from a subset of natural numbers (*Natural Numbers* => $$\mathbb{N} = \{1, 2, 3, \cdots\}$$) defined by $$[0, n]$$. The algorithm consists of the following steps:
+1. Begin with all Natural numbers [2, n] marked as prime. Let $$k=2$$.
+2. Mark each multiple of $$k$$, from $$k^2$$ to $$n$$, as non-prime.
+3. Set $$k$$ to the next number still marked prime
+4. Repeat (2) and (3) while $$k<\sqrt n$$
 
-|Title|
-1|2|3|4|5|6|7|8|9|10
+Breaking this down
+
+01|02|03|04|05|06|07|08|09|10
 11|12|13|14|15|16|17|18|19|20
 21|22|23|24|25|26|27|28|29|30
 31|32|33|34|35|36|37|38|39|40
