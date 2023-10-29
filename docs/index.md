@@ -5,6 +5,7 @@
 
 # Meeting Notes
 - [Meeting 10/13/23](meetings/10.13.23)
+- [Meeting 10/27/23](meetings/10.27.23)
 
 # [Coding Problems](coding-problems)
 Above are my solutions to problems done for the club, along with (hopefully) detailed explanations. As before, if you have any questions or suggestions regarding these explanations, feel free to message me on discord.
